@@ -14,9 +14,12 @@ jobs:
           ./configure --enable-python
           ls
           make
+          ls
+          sudo apt update && sudo apt install -y checkinstall
+          sudo checkinstall --install=no -y
       - name: Archive production artifacts
         uses: actions/upload-artifact@v3
         with:
-          name: all
+          name: artifact
           path: |
             .
