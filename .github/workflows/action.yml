@@ -10,6 +10,7 @@ jobs:
           wget http://download-mirror.savannah.gnu.org/releases/getfem/stable/getfem-5.4.2.tar.gz
           tar xzf getfem-5.4.2.tar.gz
           cd getfem-5.4.2
+          pip install scipy
           ./configure --enable-python
           ls
           make
