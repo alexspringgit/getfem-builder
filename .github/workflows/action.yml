@@ -11,12 +11,14 @@ jobs:
           tar xzf getfem-5.4.2.tar.gz
           cd getfem-5.4.2
           pip install scipy
-          ./configure --enable-python
+          ./configure --enable-python --enable-shared --with-pic
           ls
           make
           ls
-          sudo apt update && sudo apt install -y checkinstall
-          sudo checkinstall --install=no -y
+          sudo make install
+          python -c "import getfem as gf;print(gf)"
+          #sudo apt update && sudo apt install -y checkinstall
+          #sudo checkinstall --install=no -y
       - name: Archive production artifacts
         uses: actions/upload-artifact@v3
         with:
