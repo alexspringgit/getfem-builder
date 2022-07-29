@@ -1,0 +1,19 @@
+name: build-getfem-5.4.2
+on:
+  workflow_dispatch:
+jobs:
+  build_and_deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: build
+        run: |
+          wget http://download-mirror.savannah.gnu.org/releases/getfem/stable/getfem-5.4.2.tar.gz
+          tar xzf getfem-5.4.2.tar.gz
+          cd getfem-5.4.2
+          ./configure --enable-python
+          ls
+          make
+          make install
+          ls /usr/local/bin | grep getfem
+      - name: deploy
+        run: ls
