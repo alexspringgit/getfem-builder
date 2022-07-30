@@ -28,6 +28,7 @@ jobs:
           sudo checkinstall --default --install=no
       - name: install and test
         run: |
+          sudo make install
           echo '$ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib/'
           export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib/
           echo '$ sudo cp /usr/local/lib64/python3.8/site-packages/getfem/*.so /usr/lib64/python3.8/lib-dynload'
