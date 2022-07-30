@@ -17,8 +17,8 @@ jobs:
           make
           ls
           sudo make install
-          ls /usr/local/lib/python3.7/site-packages/getfem
-          python -c "import sys;sys.path.append('/usr/local/lib/python3.7/site-packages');import getfem as gf;print(gf)"
+          ls /usr/local/lib/python3.8/site-packages/getfem
+          python -c "import sys;sys.path.append('/usr/local/lib/python3.8/site-packages');import getfem as gf;print(gf)"
           #sudo apt update && sudo apt install -y checkinstall
           #sudo checkinstall --install=no -y
       - name: Archive production artifacts
