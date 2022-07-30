@@ -22,7 +22,7 @@ jobs:
           cd getfem-5.4.2
           echo '$ ./configure --enable-python --enable-shared --with-pic'
           ./configure --enable-python --enable-shared --with-pic
-          echo '$ make"
+          echo '$ make'
           make
           echo '$ sudo checkinstall --default --install=no'
           sudo checkinstall --default --install=no
