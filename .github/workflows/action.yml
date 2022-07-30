@@ -11,7 +11,7 @@ jobs:
           wget http://download-mirror.savannah.gnu.org/releases/getfem/stable/getfem-5.4.2.tar.gz
           tar xzf getfem-5.4.2.tar.gz
       - name: pre-build
-      - run: |
+        run: |
           pip install scipy
           sudo apt update
           sudo apt install -y checkinstall
