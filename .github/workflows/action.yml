@@ -31,7 +31,7 @@ jobs:
           cd getfem-5.4.2
           sudo make install
           ls /usr/local/lib/python3.8/site-packages/getfem
-          python -c "import svs;print(sys.path)"
+          python -c "import sys;print(sys.path)"
           echo '$ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib/'
           export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib/
           echo '$ sudo cp /usr/local/lib/python3.8/site-packages/getfem/*.so /usr/lib/python3.8/lib-dynload'
