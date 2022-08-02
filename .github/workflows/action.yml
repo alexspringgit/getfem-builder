@@ -31,13 +31,12 @@ jobs:
           cd getfem-5.4.2
           sudo make install
           ls /usr/local/lib/python3.8/site-packages/getfem
-          python -c "import sys;print(sys.path);sys.path.append('/usr/local/lib/python3.8/site-packages')"
           echo '$ sudo cp /usr/local/lib/python3.8/site-packages/getfem/*.so /usr/lib/python3.8/lib-dynload'
           sudo cp /usr/local/lib/python3.8/site-packages/getfem/*.so /usr/lib/python3.8/lib-dynload
           echo '$ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib/'
           export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib/
-          echo '$ python -c "import getfem as gf;print(gf)"'
-          python -c "import getfem as gf;print(gf)"
+          echo '$ python -c "import sys;print(sys.path);sys.path.append('/usr/local/lib/python3.8/site-packages');print(sys.path);import getfem as gf;print(gf)"'
+          python -c "import sys;print(sys.path);sys.path.append('/usr/local/lib/python3.8/site-packages');print(sys.path);import getfem as gf;print(gf)"
       - name: Archive production artifacts
         uses: actions/upload-artifact@v3
         with:
